@@ -2,13 +2,17 @@ clientes = 'miguel, leronado,'
 
 def create_client(client_name):
     global clientes
-    clientes += client_name
-    _add_comma()
+    if client_name not in clientes:
+        clientes += client_name
+        _add_comma()
+    else:
+        print('Client already in the clients\' list')
 
 
 def list_clients():
     global clientes
     print(clientes)
+
 
 def _print_welcome():
     print('WELCOME TO PLATZI VENTAS')
@@ -16,6 +20,7 @@ def _print_welcome():
     print('What would you to like to do today ?')
     print('[C]reate client')
     print('[D]elete client')
+
 
 def _add_comma():
     global clientes
